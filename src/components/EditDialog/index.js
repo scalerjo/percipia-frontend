@@ -8,6 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import './index.css';
+import axios from 'axios';
 
 export default class extends React.Component {
     constructor(props) {
@@ -32,7 +33,15 @@ export default class extends React.Component {
 
     handleSubmit(e) {
         if (this.state.remaining >= 0 && this.state.remaining != this.max && this.state.text.trim().length != 0) {
-            this.props.onClose();
+            axios.put("/api/todo", {
+                ID: this.props.ID,
+                Text: this.state.text,
+                Time: Date.now()
+            }).then(function(response) {
+                window.location.href="/";
+            }).catch(function(err) {
+                window.location.href="/"
+            })
         }
     }
 

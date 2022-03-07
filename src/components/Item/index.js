@@ -5,6 +5,7 @@ import EditButton from '../EditButton';
 import DeleteButton from '../DeleteButton';
 
 import EditDialog from '../EditDialog';
+import axios from 'axios';
 
 class Item extends Component {
 	constructor(props) {
@@ -25,13 +26,17 @@ class Item extends Component {
         this.setState({ openEdit: false });
     }
 
-	handleDelete() {
-		
-	}
-
 	convertMS(ms) {
 		var rawDate = new Date(ms);
 		return rawDate.toLocaleDateString() + " " + rawDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+	}
+
+	handleDelete() {
+		axios.delete(`/api/todo/${this.props.key}`).then(function(response) {
+			window.location.href="/";
+		}).catch(function(err) {
+			window.location.href="/"
+		})
 	}
 
 	render(){
@@ -50,7 +55,7 @@ class Item extends Component {
 					<div className="action"><DeleteButton onClick={this.handleDelete.bind(this)}/></div>
 				</div>
 				<div>
-					<EditDialog onClose={this.handleCloseEdit.bind(this)} open={this.state.openEdit} default={this.props.text}/>
+					<EditDialog ID={this.props.key} onClose={this.handleCloseEdit.bind(this)} open={this.state.openEdit} default={this.props.text}/>
 				</div>
 			</div>
 		);

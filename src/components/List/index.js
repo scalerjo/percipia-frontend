@@ -2,6 +2,7 @@ import { Component  } from 'react'
 
 import './index.css';
 import Item from "../Item";
+import axios from 'axios';
 
 
 class List extends Component {
@@ -14,27 +15,16 @@ class List extends Component {
 	}
 
     componentDidMount() {
-        // TODO change temp list to fetch request
-        const list = [
-            {
-                id: 1,
-                text: "Take out the garbage",
-                time: 1646623153940
-            },
-            {
-                id: 2,
-                text: "Clean the dishes",
-                time: 1646623153940
-            }
-        ]
-        this.setState({todoList: list});
+        axios.get("/api/todo").then(function(response) {
+            this.setState({todoList: response.data});
+        }.bind(this))
     }
 
 	render(){
 		return (
 			<div className="listContainer">
 				{this.state.todoList.map(function(TODO) {
-                    return <Item id={TODO.id} text={TODO.text} time={TODO.time} />
+                    return <Item key={TODO.ID} text={TODO.Text} time={TODO.Time} />
                 })}
 			</div>
 		);
