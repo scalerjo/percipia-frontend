@@ -5,6 +5,7 @@ import Item from "../Item";
 import axios from 'axios';
 
 
+// List of TODO objects
 class List extends Component {
 	constructor() {
         super();
@@ -14,6 +15,7 @@ class List extends Component {
         }
 	}
 
+    // Fetch current TODO List
     componentDidMount() {
         axios.get("/api/todo").then(function(response) {
             this.setState({todoList: (response.data == null) ? [] : response.data});

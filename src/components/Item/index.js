@@ -18,6 +18,7 @@ class Item extends Component {
 		}
 	}
 
+	// Handlers for Edit dialog
 	handleClickOpenEdit() {
         this.setState({ openEdit: true });
     }
@@ -31,6 +32,7 @@ class Item extends Component {
 		return rawDate.toLocaleDateString() + " " + rawDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
 	}
 
+	// Delete a TODO item from the List
 	handleDelete() {
 		axios.delete(`/api/todo/${this.props.ID}`).then(function(response) {
 			window.location.href="/";

@@ -31,6 +31,7 @@ export default class extends React.Component {
         this.setState({remaining: this.max - length, text: e.target.value})
     }
 
+    // Add item to TODO list
     handleSubmit(e) {
         if (this.state.remaining >= 0 && this.state.remaining != this.max && this.state.text.trim().length != 0) {
             axios.post("/api/todo", {

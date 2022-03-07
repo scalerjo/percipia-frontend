@@ -13,6 +13,8 @@ class Header extends Component {
         }
 	}
 
+
+	// Handelers for Dialog
 	handleClickOpen() {
         this.setState({ open: true });
     }

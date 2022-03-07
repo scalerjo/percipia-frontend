@@ -19,7 +19,7 @@ export default class extends React.Component {
 
         this.state = {
             open: false,
-            remaining: this.max,
+            remaining: this.max - (this.props.default ? this.props.default.length : 0),
             text: ""
         }
     }
