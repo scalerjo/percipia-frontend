@@ -32,7 +32,7 @@ class Item extends Component {
 	}
 
 	handleDelete() {
-		axios.delete(`/api/todo/${this.props.key}`).then(function(response) {
+		axios.delete(`/api/todo/${this.props.ID}`).then(function(response) {
 			window.location.href="/";
 		}).catch(function(err) {
 			window.location.href="/"
@@ -55,7 +55,7 @@ class Item extends Component {
 					<div className="action"><DeleteButton onClick={this.handleDelete.bind(this)}/></div>
 				</div>
 				<div>
-					<EditDialog ID={this.props.key} onClose={this.handleCloseEdit.bind(this)} open={this.state.openEdit} default={this.props.text}/>
+					<EditDialog ID={this.props.ID} onClose={this.handleCloseEdit.bind(this)} open={this.state.openEdit} default={this.props.text}/>
 				</div>
 			</div>
 		);

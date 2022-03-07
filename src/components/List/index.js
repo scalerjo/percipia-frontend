@@ -24,7 +24,7 @@ class List extends Component {
 		return (
 			<div className="listContainer">
 				{this.state.todoList.map(function(TODO) {
-                    return <Item key={TODO.ID} text={TODO.Text} time={TODO.Time} />
+                    return <Item key={TODO.ID} ID={TODO.ID} text={TODO.Text} time={TODO.Time} />
                 })}
 			</div>
 		);

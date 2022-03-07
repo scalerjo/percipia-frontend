@@ -33,7 +33,7 @@ export default class extends React.Component {
 
     handleSubmit(e) {
         if (this.state.remaining >= 0 && this.state.remaining != this.max && this.state.text.trim().length != 0) {
-            axios.post("http://localhost:80/api/todo", {
+            axios.post("/api/todo", {
                 Text: this.state.text,
                 Time: Date.now()
             }).then(function(response) {
