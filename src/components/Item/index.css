@@ -2,11 +2,13 @@
     overflow: hidden;
     border-bottom: 1px solid #aaa;
     padding-bottom: 15px;
+    width: inherit;
 }
 
 .content {
     padding-top: 25px;
     float: left;
+    width: 100%;
 }
 
 .actionsContainer {
@@ -25,6 +27,9 @@
 
 .text, .time {
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    width: 100%;
 }
 
 .text {
