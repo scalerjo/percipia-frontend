@@ -38,6 +38,8 @@ export default class extends React.Component {
                 Time: Date.now()
             }).then(function(response) {
                 window.location.href = "/";
+            }).catch(function(err) {
+                window.location.href = "/";
             })
         }
     }
