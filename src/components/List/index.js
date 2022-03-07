@@ -16,7 +16,7 @@ class List extends Component {
 
     componentDidMount() {
         axios.get("/api/todo").then(function(response) {
-            this.setState({todoList: response.data});
+            this.setState({todoList: (response.data == null) ? [] : response.data});
         }.bind(this))
     }
 
