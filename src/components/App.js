@@ -1,11 +1,20 @@
-import './App.css';
+import { Component  } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      hello world
-    </div>
-  );
+import './App.css';
+import Header from './Header';
+
+class App extends Component {
+	constructor(){
+		super();
+	}
+
+	render(){
+		return (
+			<div className="appContainer">
+				<Header />
+			</div>
+		);
+	}
 }
 
 export default App;

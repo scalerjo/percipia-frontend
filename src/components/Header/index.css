@@ -1,0 +1,20 @@
+
+.title {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 50px;
+    white-space: nowrap;
+}
+
+.header {
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.buttonContainer {
+    position:absolute; 
+    right:0;
+    margin-top: -10px;
+    margin-right: 10%;
+}
