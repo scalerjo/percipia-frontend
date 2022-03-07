@@ -1,0 +1,32 @@
+.item {
+    overflow: hidden;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 15px;
+}
+
+.content {
+    padding-top: 25px;
+    float: left;
+}
+
+.actionsContainer {
+    padding-top: 25px;
+    overflow: hidden;
+    float: left;
+
+    position: absolute;
+    right:0;
+    margin-right: 10%;
+}
+
+.action {
+    float: left;
+}
+
+.text, .time {
+    font-family: 'Roboto', sans-serif;
+}
+
+.text {
+    padding-top: 5px;
+}

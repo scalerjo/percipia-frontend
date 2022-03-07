@@ -2,6 +2,7 @@ import { Component  } from 'react'
 
 import './App.css';
 import Header from './Header';
+import List from './List';
 
 class App extends Component {
 	constructor(){
@@ -12,6 +13,7 @@ class App extends Component {
 		return (
 			<div className="appContainer">
 				<Header />
+				<List />
 			</div>
 		);
 	}

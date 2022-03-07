@@ -18,7 +18,8 @@ export default class extends React.Component {
 
         this.state = {
             open: false,
-            remaining: this.max
+            remaining: this.max,
+            text: ""
         }
     }
 
@@ -26,11 +27,11 @@ export default class extends React.Component {
         const length = e.target.value.length;
 
 
-        this.setState({remaining: this.max - length})
+        this.setState({remaining: this.max - length, text: e.target.value})
     }
 
     handleSubmit(e) {
-        if (this.state.remaining >= 0) {
+        if (this.state.remaining >= 0 && this.state.remaining != this.max && this.state.text.trim().length != 0) {
             this.props.onClose();
         }
     }

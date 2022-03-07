@@ -2,7 +2,7 @@ import { Component  } from 'react'
 
 import './index.css';
 import NewButton from '../NewButton';
-import Dialog from "../Dialog";
+import AddDialog from "../AddDialog";
 
 class Header extends Component {
 	constructor() {
@@ -32,7 +32,7 @@ class Header extends Component {
 				<div className="buttonContainer">
 					<NewButton onClick={this.handleClickOpen.bind(this)}/>
 				</div>
-				<Dialog open={this.state.open} onClick={this.handleClickOpen.bind(this)} onClose={this.handleClose.bind(this)}/>
+				<AddDialog open={this.state.open} onClose={this.handleClose.bind(this)}/>
 			</div>
 		);
 	}
