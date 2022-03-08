@@ -17,7 +17,7 @@ class List extends Component {
 
     // Fetch current TODO List
     componentDidMount() {
-        axios.get("http://192.168.1.111/api/todo").then(function(response) {
+        axios.get("/api/todo").then(function(response) {
             var res = (response.data == null) ? [] : response.data;
             res.sort(function(a, b) {
                 return b.Time - a.Time
